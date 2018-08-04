@@ -17,21 +17,6 @@
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#"><span>Web-</span>Panel</a>
-				
-				<!-- Campana de avisos, parte superior derecha -->
-				<ul class="nav navbar-top-links navbar-right">
-					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-						<em class="fa fa-bell"></em><span class="label label-info">1</span>
-					</a>
-						<ul class="dropdown-menu dropdown-alerts">
-							<li><a href="#">
-								<div><em class="fa fa-envelope"></em> 1 New Message
-									<span class="pull-right text-muted small">3 mins ago</span></div>
-							</a></li>
-						</ul>
-					</li>
-				</ul>
-
 
 			</div>
 		</div>
@@ -54,14 +39,6 @@
 			<div class="clear"></div>
 		</div>
 
-		<!-- Buscador -->
-		<div class="divider"></div>
-		<form role="search">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Buscar">
-			</div>
-		</form>
-
 		<!-- Menu principal -->
 		<ul class="nav menu">
 			<li><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em><strong>FrontPanel</strong></a></li>
@@ -82,14 +59,13 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active"><strong>FrontPanel</strong></li>
+				<li class="active"><strong>Gestión</strong></li>
 			</ol>
 		</div>
 
 		<!-- Formulario -->
 		<div class="row">
 			<div class="col-lg-12">
-			</div>
 				<h2 class="page-header"><strong>Contenedores activos</strong></h2>
 				<button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#myModal">Nuevo contenedor</button>
                                 <!-- Modal -->
@@ -106,9 +82,15 @@
                                                                         <label>Nombre</label>
                                                                         <input class="form-control" placeholder="Nombre del contenedor" name="nombre">
                                                                 </div>
-                                                                <div class="form-group">
-                                                                        <label>Imagen</label>
-                                                                        <input class="form-control" placeholder="Nombre del volumen" name="imagen">
+								 <div class="form-group">
+                                                                        <label>Distribución</label>
+                                                                        <select name="imagen" class="form-control">
+                                                                                <option selected>Elige una distribución</option>
+                                                                                <option value="centos">Centos 7</option>
+                                                                                <option value="ubuntu">Ubuntu 16.04</option>
+                                                                                <option value="debian">Debian 9</option>
+                                                                                <option value="alpine">Alpine</option>
+                                                                        </select>
                                                                 </div>
                                                                 <div class="form-group">
                                                                         <label>Puerto</label>

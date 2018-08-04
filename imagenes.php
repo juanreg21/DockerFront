@@ -16,22 +16,7 @@
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#"><span>Web-</span>Panel</a>
-				
-				<!-- Campana de avisos, parte superior derecha -->
-				<ul class="nav navbar-top-links navbar-right">
-					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-						<em class="fa fa-bell"></em><span class="label label-info">1</span>
-					</a>
-						<ul class="dropdown-menu dropdown-alerts">
-							<li><a href="#">
-								<div><em class="fa fa-envelope"></em> 1 New Message
-									<span class="pull-right text-muted small">3 mins ago</span></div>
-							</a></li>
-						</ul>
-					</li>
-				</ul>
-
+				<a class="navbar-brand" href="#"><span>Docker</span>web</a>
 
 			</div>
 		</div>
@@ -54,14 +39,6 @@
 			<div class="clear"></div>
 		</div>
 
-		<!-- Buscador -->
-		<div class="divider"></div>
-		<form role="search">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Buscar">
-			</div>
-		</form>
-
 		<!-- Menu principal -->
 		<ul class="nav menu">
 			<li><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em><strong>FrontPanel</strong></a></li>
@@ -82,14 +59,14 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active"><strong>FrontPanel</strong></li>
+				<li class="active"><strong>Imagenes</strong></li>
 			</ol>
 		</div>
 
 		<!-- Formulario -->
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="page-header"><strong>Gestion de imagenes</strong></h2>
+				<h2 class="page-header"><strong>Imagenes del sistema</strong></h2>
 			</div>
 		</div>
 				
@@ -101,7 +78,7 @@
 							<?php $result=shell_exec("sudo docker images"); 
 							echo "<pre>$result</pre>";
 							?>
-					 <h2>Panel de gestión</h2>
+					 <h2><strong>Gestión</strong></h2>
                                         <form role="form" method="post" action="img.php">
                                                                 <div class="form-group">
                                                                         <label>Nombre de la imagen</label>
@@ -115,6 +92,15 @@
 					</div>
 				</div>
 			</div>
+			 <div class="col-lg-12">
+                                <div class="panel panel-default">
+                                        <div class="panel-body">
+						<h1>imagenes para descargar</h1>
+						<img 
+                                        </div>
+                                </div>
+                        </div>
+
 		</div>
 	
 	</div>	

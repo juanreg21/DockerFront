@@ -16,23 +16,7 @@
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#"><span>Web-</span>Panel</a>
-				
-				<!-- Campana de avisos, parte superior derecha -->
-				<ul class="nav navbar-top-links navbar-right">
-					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-						<em class="fa fa-bell"></em><span class="label label-info">1</span>
-					</a>
-						<ul class="dropdown-menu dropdown-alerts">
-							<li><a href="#">
-								<div><em class="fa fa-envelope"></em> 1 New Message
-									<span class="pull-right text-muted small">3 mins ago</span></div>
-							</a></li>
-						</ul>
-					</li>
-				</ul>
-
-
+				<a class="navbar-brand" href="#"><span>Docker</span>web</a>
 			</div>
 		</div>
 	</nav>
@@ -45,26 +29,19 @@
 			<div class="profile-userpic">
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
-
-			<!-- Datos del usuario -->
-			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Usuario</div>
-				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
+			
+			 <!-- Datos del usuario -->
+                        <div class="profile-usertitle">
+                                <div class="profile-usertitle-name">Usuario</div>
+                         	<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
-			<div class="clear"></div>
+                        <div class="clear"></div>
+
 		</div>
-
-		<!-- Buscador -->
-		<div class="divider"></div>
-		<form role="search">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Buscar">
-			</div>
-		</form>
 
 		<!-- Menu principal -->
 		<ul class="nav menu">
-                        <li class="active"><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em><strong>FrontPanel</strong></a></li>
+                        <li class="active"><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em><strong>Dashboard</strong></a></li>
                         <li><a href="contenedor.html"><em class="fa fa-server">&nbsp;</em><strong>Crear contenedor</strong></a></li>
                         <li><a href="activos.php"><em class="fa fa-cogs">&nbsp;</em><strong>Gestionar contenedores</strong></a></li>
                         <li><a href="imagenes.php"><em class="fa fa-download">&nbsp;</em><strong>Imagenes</strong></a></li>
