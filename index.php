@@ -64,23 +64,14 @@
 
 		<!-- Menu principal -->
 		<ul class="nav menu">
-			<li class="active"><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em><strong>FrontPanel</strong></a></li>
-			<li><a href="contenedor.html"><em class="fa fa-server">&nbsp;</em><strong>Contenedor</strong></a></li>
-			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
-				<em class="fa fa-cogs">&nbsp;</em><strong>Avanzado</strong><span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
-				</a>
-				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="#">
-						<span class="fa fa-download">&nbsp;</span><strong>Imagenes</strong></a></li>
-					<li><a class="" href="#">
-						<span class="fa fa-folder-open">&nbsp;</span><strong>Volumenes</strong></a></li>
-					<li><a class="" href="#">
-						<span class="fa fa-sitemap">&nbsp;</span><strong>Redes</strong></a></li>
-				</ul>
-			</li>
-			<li><a href="index.html"><em class="fa fa-cloud-download">&nbsp;</em><strong>CMS</strong></a></li>
-			<li><a href="index.html"><em class="fa fa-power-off">&nbsp;</em><strong>Cerrar sesión</strong></a></li>
-		</ul>
+                        <li class="active"><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em><strong>FrontPanel</strong></a></li>
+                        <li><a href="contenedor.html"><em class="fa fa-server">&nbsp;</em><strong>Crear contenedor</strong></a></li>
+                        <li><a href="activos.php"><em class="fa fa-cogs">&nbsp;</em><strong>Gestionar contenedores</strong></a></li>
+                        <li><a href="imagenes.php"><em class="fa fa-download">&nbsp;</em><strong>Imagenes</strong></a></li>
+                        <li><a href="index.html"><em class="fa fa-cloud-download">&nbsp;</em><strong>CMS</strong></a></li>
+                        <li><a href="index.html"><em class="fa fa-power-off">&nbsp;</em><strong>Cerrar sesión</strong></a></li>
+                </ul>
+
 	</div>
 		
 	
@@ -143,96 +134,33 @@
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h3 class="page-header"><strong>SISTEMA</strong></h3>
+				<h3 class="page-header"><strong>CONTENEDORES ACTIVOS</strong></h3>
 			</div>
 		</div>
 
 		<!-- Valores de los circulos -->
 		<div class="row">
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4><strong>Activos</strong></h4>
-						<div class="easypiechart" id="easypiechart-blue" data-percent="92" ><span class="percent">92%</span></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4><strong>Parados</strong></h4>
-						<div class="easypiechart" id="easypiechart-orange" data-percent="65" ><span class="percent">65%</span></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4><strong>Memoria total</strong></h4>
-						<div class="easypiechart" id="easypiechart-teal" data-percent="2000" ><span class="percent">56%</span></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4><strong>Memoria disponible</strong></h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="1024" ><span class="percent">27%</span></div>
-					</div>
-				</div>
-			</div>
+				<?php $result=shell_exec("sudo docker ps"); 
+				      echo "<pre>$result</pre>";
+				?>
+			
 		</div>
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h3 class="page-header"><strong>PROGRESO</strong></h3>
+				<h3 class="page-header"><strong>CONTENEDORES PARADOS</strong></h3>
 			</div>
 		</div>
 
 		<!-- Grafica -->
-		<div class="panel-body">
-			<div class="canvas-wrapper">
-					<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
-			</div>
-		</div>
-
-		<!-- Formulario -->
 		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header"><strong>Formulario</strong></h1>
-			</div>
+			<?php $parados=shell_exec("sudo docker ps -a");
+                              echo "<pre>$parados</pre>";
+                        ?>
+
 		</div>
 				
 		
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="panel panel-default">
-					<div class="panel-heading"><strong>Crear un contenedor</strong></div>
-					<div class="panel-body">
-						<div class="col-md-6">
-							<form role="form">
-								<div class="form-group">
-									<label>Nombre</label>
-									<input class="form-control" placeholder="Nombre del contenedor">
-								</div>
-								<div class="form-group">
-									<label>Distribución</label>
-									<select class="form-control">
-										<option>Centos 7</option>
-										<option>Ubuntu 17.04</option>
-										<option>Debian 9</option>
-										<option>Alpine</option>
-									</select>
-								</div>
-								<input type="submit" class="btn btn-primary" value="Crear">
-								<input type="reset" class="btn btn-default" value="Reset">
-							</form>
-						</div>
-					</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	
 	</div>	
 	

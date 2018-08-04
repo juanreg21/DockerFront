@@ -65,8 +65,8 @@
 		<!-- Menu principal -->
 		<ul class="nav menu">
 			<li><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em><strong>FrontPanel</strong></a></li>
-			<li class="active"><a href="contenedor.html"><em class="fa fa-server">&nbsp;</em><strong>Crear contenedor</strong></a></li>
-			<li><a href="activos.php"><em class="fa fa-cogs">&nbsp;</em><strong>Gestionar contenedores</strong></a></li>
+			<li><a href="contenedor.html"><em class="fa fa-server">&nbsp;</em><strong>Crear contenedor</strong></a></li>
+			<li class="active"><a href="activos.php"><em class="fa fa-cogs">&nbsp;</em><strong>Gestionar contenedores</strong></a></li>
 			<li><a href="imagenes.php"><em class="fa fa-download">&nbsp;</em><strong>Imagenes</strong></a></li>
 			<li><a href="index.html"><em class="fa fa-cloud-download">&nbsp;</em><strong>CMS</strong></a></li>
 			<li><a href="index.html"><em class="fa fa-power-off">&nbsp;</em><strong>Cerrar sesión</strong></a></li>
@@ -89,45 +89,71 @@
 		<!-- Formulario -->
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="page-header"><strong>Crear un contenedor</strong></h2>
 			</div>
+				<h2 class="page-header"><strong>Contenedores activos</strong></h2>
+				<button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#myModal">Nuevo contenedor</button>
+                                <!-- Modal -->
+                                <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h4 class="modal-title"><strong>Crear contenedor</strong></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                                <form role="form" method="post" action="crear.php">
+                                                                <div class="form-group">
+                                                                        <label>Nombre</label>
+                                                                        <input class="form-control" placeholder="Nombre del contenedor" name="nombre">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                        <label>Imagen</label>
+                                                                        <input class="form-control" placeholder="Nombre del volumen" name="imagen">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                        <label>Puerto</label>
+                                                                        <input class="form-control" placeholder="puerto">
+                                                                </div>
+                                                                <input type="submit" class="btn btn-md btn-primary" value="Crear">
+                                                        </form>
+
+                                        </div>
+                                </div>
+                                </div>
+				</br>
+
+			</div>
+
 		</div>
-				
-		
+	
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<div class="col-md-6">
-							<form role="form" method="post" action="crear.php">
+							<?php $result=shell_exec("sudo docker ps"); 
+							echo "<pre>$result</pre>";
+							?>
+					</br></br>
+					<h2><strong>Panel de gestión</strong></h2>
+					<form role="form" method="post" action="">
                                                                 <div class="form-group">
                                                                         <label>Nombre del contenedor</label>
-                                                                        <input class="form-control" placeholder="Nombre" name="nombre">
+                                                                        <input class="form-control" placeholder="Nombre del contenedor" name="nombre">
                                                                 </div>
-                                                                <div class="form-group">
-                                                                        <label>Distribución</label>
-									<select name="imagen" class="form-control">
-                                                                		<option selected>Elige una distribución</option>
-										<option value="centos">Centos 7</option>
-										<option value="ubuntu">Ubuntu 16.04</option>
-										<option value="debian">Debian 9</option>
-										<option value="alpine">Alpine</option>
-									</select>
-								</div>
-                                                                <div class="form-group">
-                                                                        <label>Puerto</label>
-                                                                        <input class="form-control" placeholder="Puerto" name="puerto">
-                                                                </div>
-                                                                <input type="submit" class="btn btn-primary" value="Crear">
-                                                                <input type="reset" class="btn btn-default" value="Reset">
-                                                        </form>
-						</div>
+
+						<input type="submit" class="btn btn-md btn-success" value="Iniciar">
+						<input type="submit" class="btn btn-md btn-primary" value="Parar">
+						<input type="submit" class="btn btn-md btn-warning" value="Borrar">
+                                        	<input type="submit" class="btn btn-md btn-danger" value="Matar">
+					</form>
+
 					</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	
+
+
 	</div>	
 	
 	<script src="js/jquery-1.11.1.min.js"></script>

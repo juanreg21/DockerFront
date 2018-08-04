@@ -65,9 +65,9 @@
 		<!-- Menu principal -->
 		<ul class="nav menu">
 			<li><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em><strong>FrontPanel</strong></a></li>
-			<li class="active"><a href="contenedor.html"><em class="fa fa-server">&nbsp;</em><strong>Crear contenedor</strong></a></li>
+			<li><a href="contenedor.html"><em class="fa fa-server">&nbsp;</em><strong>Crear contenedor</strong></a></li>
 			<li><a href="activos.php"><em class="fa fa-cogs">&nbsp;</em><strong>Gestionar contenedores</strong></a></li>
-			<li><a href="imagenes.php"><em class="fa fa-download">&nbsp;</em><strong>Imagenes</strong></a></li>
+			<li class="active"><a href="imagenes.php"><em class="fa fa-download">&nbsp;</em><strong>Imagenes</strong></a></li>
 			<li><a href="index.html"><em class="fa fa-cloud-download">&nbsp;</em><strong>CMS</strong></a></li>
 			<li><a href="index.html"><em class="fa fa-power-off">&nbsp;</em><strong>Cerrar sesión</strong></a></li>
 		</ul>
@@ -89,7 +89,7 @@
 		<!-- Formulario -->
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="page-header"><strong>Crear un contenedor</strong></h2>
+				<h2 class="page-header"><strong>Gestion de imagenes</strong></h2>
 			</div>
 		</div>
 				
@@ -98,30 +98,19 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<div class="col-md-6">
-							<form role="form" method="post" action="crear.php">
+							<?php $result=shell_exec("sudo docker images"); 
+							echo "<pre>$result</pre>";
+							?>
+					 <h2>Panel de gestión</h2>
+                                        <form role="form" method="post" action="img.php">
                                                                 <div class="form-group">
-                                                                        <label>Nombre del contenedor</label>
-                                                                        <input class="form-control" placeholder="Nombre" name="nombre">
+                                                                        <label>Nombre de la imagen</label>
+                                                                        <input class="form-control" placeholder="Nombre de la imagen" name="imagen">
                                                                 </div>
-                                                                <div class="form-group">
-                                                                        <label>Distribución</label>
-									<select name="imagen" class="form-control">
-                                                                		<option selected>Elige una distribución</option>
-										<option value="centos">Centos 7</option>
-										<option value="ubuntu">Ubuntu 16.04</option>
-										<option value="debian">Debian 9</option>
-										<option value="alpine">Alpine</option>
-									</select>
-								</div>
-                                                                <div class="form-group">
-                                                                        <label>Puerto</label>
-                                                                        <input class="form-control" placeholder="Puerto" name="puerto">
-                                                                </div>
-                                                                <input type="submit" class="btn btn-primary" value="Crear">
-                                                                <input type="reset" class="btn btn-default" value="Reset">
-                                                        </form>
-						</div>
+
+                                                <input type="submit" class="btn btn-md btn-danger" value="Borrar">
+                                        </form>
+
 					</div>
 					</div>
 				</div>
